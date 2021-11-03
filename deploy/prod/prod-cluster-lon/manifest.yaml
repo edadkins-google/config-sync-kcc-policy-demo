@@ -93,38 +93,6 @@ spec:
     repo: https://github.com/ejmadkins/acm-multi-repo-tenant-a.git
   sourceFormat: unstructured
 ---
-apiVersion: constraints.gatekeeper.sh/v1beta1
-kind: K8sPSPCapabilities
-metadata:
-  name: forbid-cap-net-raw
-spec:
-  match:
-    kinds:
-    - apiGroups:
-      - ""
-      kinds:
-      - Pod
-    namespaces:
-    - default
-  parameters:
-    requiredDropCapabilities:
-    - NET_RAW
----
-apiVersion: constraints.gatekeeper.sh/v1beta1
-kind: K8sRequiredLabels
-metadata:
-  name: ns-must-have-geo
-spec:
-  match:
-    kinds:
-    - apiGroups:
-      - ""
-      kinds:
-      - Namespace
-  parameters:
-    labels:
-    - key: geo
----
 apiVersion: core.cnrm.cloud.google.com/v1beta1
 kind: ConfigConnector
 metadata:
