@@ -242,5 +242,4 @@ kind: ConfigConnector
 metadata:
   name: configconnector.core.cnrm.cloud.google.com
 spec:
-  googleServiceAccount: cnrmsa-dev-cluster@ejmadkins-1425.iam.gserviceaccount.com
-  mode: namespaced
+ mode: namespaced
