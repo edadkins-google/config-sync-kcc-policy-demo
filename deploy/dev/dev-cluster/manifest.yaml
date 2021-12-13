@@ -322,3 +322,73 @@ spec:
         port: 53
       - protocol: UDP
         port: 53
+---
+apiVersion: v1
+kind: Namespace
+metadata:
+  labels:
+    geo: uk
+  name: cnrm-system
+---
+apiVersion: v1
+kind: Namespace
+metadata:
+  labels:
+    geo: uk
+  name: config-management-monitoring
+---
+apiVersion: v1
+kind: Namespace
+metadata:
+  labels:
+    geo: uk
+  name: config-management-system
+---
+apiVersion: v1
+kind: Namespace
+metadata:
+  labels:
+    geo: uk
+  name: configconnector-operator-system
+---
+apiVersion: v1
+kind: Namespace
+metadata:
+  labels:
+    geo: uk
+  name: default
+---
+apiVersion: v1
+kind: Namespace
+metadata:
+  labels:
+    geo: uk
+  name: gatekeeper-system
+---
+apiVersion: v1
+kind: Namespace
+metadata:
+  labels:
+    geo: uk
+  name: kube-node-lease
+---
+apiVersion: v1
+kind: Namespace
+metadata:
+  labels:
+    geo: uk
+  name: kube-public
+---
+apiVersion: v1
+kind: Namespace
+metadata:
+  labels:
+    geo: uk
+  name: kube-system
+---
+apiVersion: v1
+kind: Namespace
+metadata:
+  labels:
+    geo: uk
+  name: resource-group-system
