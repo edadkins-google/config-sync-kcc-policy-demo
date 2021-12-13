@@ -244,3 +244,81 @@ metadata:
 spec:
   googleServiceAccount: cnrmsa-dev-cluster-lon@ejmadkins-pc-acm.iam.gserviceaccount.com
   mode: cluster
+---
+kind: NetworkPolicy
+apiVersion: networking.k8s.io/v1
+metadata:
+  name: default-deny
+  namespace: tenant-a
+spec:
+  policyTypes:
+  - Ingress
+  - Egress
+  podSelector: {}
+  egress:
+    - to:
+      - namespaceSelector:
+          matchLabels:
+            k8s-namespace: kube-system
+        podSelector:
+          matchExpressions:
+          - key: k8s-app
+            operator: In
+            values: ["kube-dns","node-local-dns"]
+      ports:
+      - protocol: TCP
+        port: 53
+      - protocol: UDP
+        port: 53
+---
+kind: NetworkPolicy
+apiVersion: networking.k8s.io/v1
+metadata:
+  name: default-deny
+  namespace: tenant-b
+spec:
+  policyTypes:
+  - Ingress
+  - Egress
+  podSelector: {}
+  egress:
+    - to:
+      - namespaceSelector:
+          matchLabels:
+            k8s-namespace: kube-system
+        podSelector:
+          matchExpressions:
+          - key: k8s-app
+            operator: In
+            values: ["kube-dns","node-local-dns"]
+      ports:
+      - protocol: TCP
+        port: 53
+      - protocol: UDP
+        port: 53
+---
+kind: NetworkPolicy
+apiVersion: networking.k8s.io/v1
+metadata:
+  name: default-deny
+  namespace: tenant-c
+spec:
+  policyTypes:
+  - Ingress
+  - Egress
+  podSelector: {}
+  egress:
+    - to:
+      - namespaceSelector:
+          matchLabels:
+            k8s-namespace: kube-system
+        podSelector:
+          matchExpressions:
+          - key: k8s-app
+            operator: In
+            values: ["kube-dns","node-local-dns"]
+      ports:
+      - protocol: TCP
+        port: 53
+      - protocol: UDP
+        port: 53
