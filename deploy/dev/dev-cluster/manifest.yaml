@@ -342,13 +342,6 @@ kind: Namespace
 metadata:
   labels:
     geo: uk
-  name: config-management-system
----
-apiVersion: v1
-kind: Namespace
-metadata:
-  labels:
-    geo: uk
   name: configconnector-operator-system
 ---
 apiVersion: v1
